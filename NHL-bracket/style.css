@@ -1,0 +1,370 @@
+:root {
+    --bg: #050505;
+    --panel: #101010;
+    --panel-2: #161616;
+    --border: #e8e8e8;
+    --muted: #a9a9a9;
+    --accent: #ffffff;
+    --danger: #c0392b;
+    --danger-hover: #e74c3c;
+    --line: #f1f1f1;
+    --bronze: #b87333;
+    --shadow: rgba(0, 0, 0, 0.45);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--accent);
+    overflow-x: hidden;
+}
+
+.page {
+    width: min(1400px, 100%);
+    height: 100vh;
+    margin: 0 auto;
+    padding: 14px 16px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.logo {
+    width: min(280px, 60vw);
+    max-height: 58px;
+    object-fit: contain;
+    display: block;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 3.4vw, 3rem);
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.tournament-area {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    padding: 10px 16px 12px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #0b0b0b 0%, #080808 100%);
+    box-shadow: 0 20px 60px var(--shadow);
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 1;
+}
+
+.result-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.result-row.top {
+    margin-bottom: 14px;
+}
+
+.silver-row {
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-label {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.bronze-title {
+    color: #d9b08c;
+}
+
+.result-box {
+    width: 250px;
+    height: 50px;
+    border: 2px solid var(--border);
+    border-radius: 13px;
+    background: #0f0f0f;
+    color: var(--accent);
+    font-size: 0.98rem;
+    font-weight: 800;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.champion-box {
+    width: 250px;
+}
+
+.small-result-box {
+    width: 210px;
+}
+
+.board {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 8px 6px 2px;
+}
+
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr 420px 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.team-column,
+.final-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.team-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.team-input,
+.final-box,
+.bronze-box,
+.score-input {
+    width: 165px;
+    height: 48px;
+    border: 2px solid var(--border);
+    border-radius: 13px;
+    background: var(--panel);
+    color: var(--accent);
+    font-size: 0.96rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    outline: none;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.team-input {
+    width: 140px;
+    height: 42px;
+}
+
+.score-input {
+    width: 80px;
+    height: 38px;
+    font-size: 0.8rem;
+}
+
+.team-input:focus,
+.score-input:focus {
+    border-color: #8fd3ff;
+    background: #131313;
+    transform: translateY(-1px);
+}
+
+.final-pair,
+.bronze-pair {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.final-box {
+    width: 165px;
+    cursor: pointer;
+    background: var(--panel-2);
+}
+
+.bronze-box {
+    width: 165px;
+    cursor: pointer;
+    background: #14110f;
+    border-color: var(--bronze);
+}
+
+.bronze-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bronze-results {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.small-card {
+    min-width: 220px;
+}
+
+.advance-btn,
+.reset-btn {
+    border: none;
+    border-radius: 11px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+.advance-btn {
+    margin-top: 4px;
+    background: #1f1f1f;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.advance-btn:hover,
+.final-box:hover,
+.bronze-box:hover,
+.reset-btn:hover {
+    transform: translateY(-1px);
+}
+
+.advance-btn:hover {
+    background: #2a2a2a;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.reset-btn {
+    background: var(--danger);
+    color: #fff;
+    padding: 12px 20px;
+}
+
+.reset-btn:hover {
+    background: var(--danger-hover);
+}
+
+.connector-line {
+    stroke: var(--line);
+    stroke-width: 3;
+    stroke-linecap: round;
+    fill: none;
+    opacity: 0.95;
+}
+
+.connector-line.active {
+    stroke: #8fd3ff;
+    stroke-width: 4;
+}
+
+.connector-line.bronze-line {
+    stroke: var(--bronze);
+}
+
+@media (max-width: 1100px) {
+    .page {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .tournament-area {
+        min-height: 0;
+    }
+
+    .top-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .match-row {
+        flex-wrap: wrap;
+    }
+
+    .result-box,
+    .champion-box {
+        width: min(100%, 300px);
+    }
+}
+
+@media (max-width: 560px) {
+    .team-input,
+    .final-box,
+    .bronze-box,
+    .score-input {
+        width: min(100%, 250px);
+    }
+
+    .match-row,
+    .final-pair,
+    .bronze-pair {
+        flex-direction: column;
+    }
+
+    .bronze-results {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-box,
+    .champion-box {
+        width: min(100%, 280px);
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Statistics</title>
+    <link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+    <div class="page">
+        <h1>PLAYER STATISTICS</h1>
+
+        <div class="controls panel">
+            <input id="search" placeholder="Search player..." oninput="render()" />
+
+            <select id="teamFilter" onchange="render()">
+                <option value="">All Teams</option>
+            </select>
+        </div>
+
+        <section class="panel team-panel">
+            <div class="team-panel-head">
+                <h2>Teams</h2>
+                <p>Add teams for the dropdowns. Removing a team moves its players to Unassigned.</p>
+            </div>
+
+            <div class="team-tools">
+                <input id="newTeamName" placeholder="New team name" />
+                <button type="button" onclick="addTeam()">Add Team</button>
+            </div>
+
+            <div id="teamList" class="team-list"></div>
+        </section>
+
+        <div class="form panel">
+            <input id="name" placeholder="Player name" />
+            <select id="team"></select>
+            <input id="goals" type="number" min="0" placeholder="Goals" />
+            <input id="assists" type="number" min="0" placeholder="Assists" />
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+
+        <section class="panel main-table-panel">
+            <h2>Players</h2>
+            <div class="table-wrap scrollable large-scroll">
+                <table id="statsTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortBy('name')">Name</th>
+                            <th onclick="sortBy('team')">Team</th>
+                            <th onclick="sortBy('goals')">Goals</th>
+                            <th onclick="sortBy('assists')">Assists</th>
+                            <th onclick="sortBy('points')">Points</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="summary-grid">
+            <section class="panel summary-panel">
+                <h2>MVP Leaderboard</h2>
+                <div class="table-wrap scrollable small-scroll">
+                    <table id="mvpTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Team</th>
+                                <th>Goals</th>
+                                <th>Assists</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel summary-panel">
+                <h2>Team Totals</h2>
+                <div class="table-wrap scrollable small-scroll">
+                    <table id="teamTotalsTable">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Players</th>
+                                <th>Goals</th>
+                                <th>Assists</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <button class="reset" onclick="resetStats()">Reset Stats</button>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+</html>

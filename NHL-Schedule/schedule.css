@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnkwrGLy16f7M-n6Hj2bdbCEjWJ_F4J2MCqw&s') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.75);
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+    align-items: start;
+}
+
+.match {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 3px 0;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+input {
+    width: 48px;
+    text-align: center;
+    background: #111;
+    color: white;
+    border: 1px solid white;
+    padding: 3px 4px;
+}
+
+select {
+    background: #111;
+    color: white;
+    border: 1px solid white;
+    padding: 3px 4px;
+}
+
+table {
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 6px;
+    text-align: center;
+}
+
+.top4 {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.playoff {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.playoff > div {
+    min-width: 220px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}

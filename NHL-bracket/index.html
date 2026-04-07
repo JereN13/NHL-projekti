@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHL 26 Spring Cup</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+    <div class="logo-wrap">
+        <img
+            class="logo"
+            src="https://cdn.sumup.store/shops/08977596/settings/8fc7aef3-ba18-4261-af8f-75581d8bdbad.jpeg"
+            alt="Tournament logo"
+            referrerpolicy="no-referrer"
+        />
+    </div>
+
+    <h1>NHL 26 SPRING CUP</h1>
+
+    <div class="tournament-area" id="tournamentArea">
+        <svg class="lines" id="lines" aria-hidden="true"></svg>
+
+        <!-- CHAMPION -->
+        <div class="result-row top">
+            <div class="result-card">
+                <div class="section-label">Champion</div>
+                <div id="champion" class="result-box champion-box">-</div>
+            </div>
+        </div>
+
+        <!-- MAIN BOARD -->
+        <div class="board">
+            <div class="top-row">
+
+                <!-- LEFT SEMIFINAL -->
+                <div class="team-column left">
+                    <div class="section-label"></div>
+                    <div class="match-row">
+                        <input id="team1" class="team-input" type="text" placeholder="Team 1" />
+                        <input id="semiLeftScore" class="score-input" type="text" placeholder="Score" />
+                        <input id="team2" class="team-input" type="text" placeholder="Team 2" />
+                    </div>
+                    <button class="advance-btn" onclick="advanceSide('left')">Advance winner</button>
+                </div>
+
+                <!-- FINAL -->
+                <div class="final-column">
+                    <div class="section-label">Final</div>
+                    <div class="final-pair">
+                        <button id="final1" class="result-box final-box" onclick="selectChampion(0)">-</button>
+                        <input id="finalScoreMain" class="score-input" type="text" placeholder="Score" />
+                        <button id="final2" class="result-box final-box" onclick="selectChampion(1)">-</button>
+                    </div>
+                </div>
+
+                <!-- RIGHT SEMIFINAL -->
+                <div class="team-column right">
+                    <div class="section-label"></div>
+                    <div class="match-row">
+                        <input id="team3" class="team-input" type="text" placeholder="Team 3" />
+                        <input id="semiRightScore" class="score-input" type="text" placeholder="Score" />
+                        <input id="team4" class="team-input" type="text" placeholder="Team 4" />
+                    </div>
+                    <button class="advance-btn" onclick="advanceSide('right')">Advance winner</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SILVER -->
+        <div class="result-row silver-row">
+            <div class="result-card">
+                <div class="section-label">Silver</div>
+                <div id="silver" class="result-box champion-box">-</div>
+            </div>
+        </div>
+
+        <!-- BRONZE -->
+        <div class="bronze-section">
+            <div class="section-label bronze-title">Bronze Match</div>
+
+            <div class="bronze-pair">
+                <button id="bronze1" class="result-box bronze-box" onclick="selectBronze(0)">-</button>
+                <input id="bronzeScore" class="score-input" type="text" placeholder="Score" />
+                <button id="bronze2" class="result-box bronze-box" onclick="selectBronze(1)">-</button>
+            </div>
+
+            <div class="bronze-results">
+                <div class="result-card small-card">
+                    <div class="section-label">Bronze</div>
+                    <div id="bronze" class="result-box small-result-box">-</div>
+                </div>
+
+                <div class="result-card small-card">
+                    <div class="section-label">4th Place</div>
+                    <div id="fourthPlace" class="result-box small-result-box">-</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button class="reset-btn" onclick="resetTournament()">Reset</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

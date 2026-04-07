@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHL 26 Spring Cup - Live</title>
+    <link rel="stylesheet" href="viewer.css" />
+</head>
+<body>
+
+<div class="overlay">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="title">NHL 26 SPRING CUP</div>
+        <div class="live">LIVE</div>
+    </div>
+
+    <!-- VIEW TITLE -->
+    <div id="viewTitle" class="view-title">PLAYERS</div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- PLAYERS -->
+        <section id="playersView" class="view active">
+            <div class="table-container">
+                <table id="playersTableWrapper">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Team</th>
+                            <th>G</th>
+                            <th>A</th>
+                            <th>P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playersTable">
+                        <tr><td colspan="5">No players available</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- MVP -->
+        <section id="mvpView" class="view">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Team</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mvpTable">
+                        <tr><td colspan="4">No data</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TEAMS -->
+        <section id="teamView" class="view">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Players</th>
+                            <th>Goals</th>
+                            <th>Assists</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teamTable">
+                        <tr><td colspan="5">No teams available</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <span id="lastUpdate">Updated: -</span>
+    </div>
+
+</div>
+
+<script src="viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NHL 26 Spring Cup - Schedule</title>
+<link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+
+<div class="overlay">
+
+    <h1>NHL 26 SPRING CUP</h1>
+
+    <!-- GROUP STAGE -->
+    <div class="section">
+        <h2>Alkusarja</h2>
+        <div id="matches" class="matches-grid"></div>
+    </div>
+
+    <!-- STANDINGS -->
+    <div class="section">
+        <h2>Standings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>Pts</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                </tr>
+            </thead>
+            <tbody id="standings"></tbody>
+        </table>
+    </div>
+
+    <!-- PLAYOFFS -->
+    <div class="section">
+        <h2>Playoffs</h2>
+
+        <div class="playoff">
+            <div>
+                Semi 1<br>
+                <span id="semi1teams"></span><br>
+                <input id="semi1a" type="number" min="0"> - <input id="semi1b" type="number" min="0">
+                <select id="semi1type"></select>
+            </div>
+
+            <div>
+                Semi 2<br>
+                <span id="semi2teams"></span><br>
+                <input id="semi2a" type="number" min="0"> - <input id="semi2b" type="number" min="0">
+                <select id="semi2type"></select>
+            </div>
+        </div>
+
+        <div class="playoff">
+            <div>
+                Final<br>
+                <span id="finalTeams"></span><br>
+                <input id="finala" type="number" min="0"> - <input id="finalb" type="number" min="0">
+                <select id="finaltype"></select>
+            </div>
+
+            <div>
+                Bronze<br>
+                <span id="bronzeTeams"></span><br>
+                <input id="bronzea" type="number" min="0"> - <input id="bronzeb" type="number" min="0">
+                <select id="bronzetype"></select>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="schedule.js"></script>
+</body>
+</html>
